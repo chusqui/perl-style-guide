@@ -1,0 +1,6 @@
+* Code Layout
+** Use UTF8
+** Indent with two spaces
+** UNIX endline
+* Best Practices
+** tralala...
