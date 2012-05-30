@@ -31,3 +31,29 @@ sub function {
 * Do not use tabs. It makes code difficult to browse in some hosts (where 8
   spaces per tab is the standard) and only works when indenting by blocks.
 
+### Comments
+
+* Use Common Lisp comment style, meaning:
+
+- Use four hash marks on headers.
+- Use three hash marks on un-indented comments.
+- Use two hash marks on indented comments.
+- Put inline comments starting at column 40, using one hash mark.
+
+```perl
+#### Module     : Useless module
+#### Author     : elrzn <eric.lrzn@gmail.com>
+#### Created on : 31 MAY 2012
+package MyModule;
+
+### Warning, evil function ahead!
+
+## Does black magic. Highly unstable!
+sub evil_function {
+  my @damned = map  { evil_stuff $_ }  # This is an inline comment, and
+               grep { guiltyp $_ }     #  we continue it this way.
+               process @_;
+  wantarray ? @damned : [@damned];
+}
+```
+
