@@ -33,12 +33,7 @@ sub function {
 
 ### Comments
 
-* Use Common Lisp comment style, meaning:
-
-- Use four hash marks on headers.
-- Use three hash marks on un-indented comments.
-- Use two hash marks on indented comments.
-- Put inline comments starting at column 40, using one hash mark.
+* Use Common Lisp comment style, meaning: Use four hash marks on headers; three hash marks on un-indented comments; two hash marks on indented comments and put inline comments starting at column 40, using one hash mark.
 
 ```perl
 #### Module     : Useless module
@@ -51,7 +46,7 @@ package MyModule;
 ## Does black magic. Highly unstable!
 sub evil_function {
   my @damned = map  { evil_stuff $_ }  # This is an inline comment, and
-               grep { guiltyp $_ }     #  we continue it this way.
+               grep { guiltyp $_    }  #  we continue it this way.
                process @_;
   wantarray ? @damned : [@damned];
 }
