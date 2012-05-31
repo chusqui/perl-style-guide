@@ -28,10 +28,10 @@ comfortable with a given guideline and stick to it.
 ```perl
 ## Don't do this:
 my $str =
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor aliqua.";
 
 ## Do this instead:
-my $str = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+my $str = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor aliqua.";
 
 ## This is just wrong and a waste of time. Don't ever do this:
 my $str = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do "
@@ -42,11 +42,11 @@ my $str = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do "
         . "nulla pariatur. Excepteur sint occaecat cupidatat non proident, " 
         . "sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
-## This is actually okay. Notice the EOL flag? Scroll right ;)
-my $str = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n"
-        . "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n"
-        . "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n"
-        . "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+## This is actually okay. Notice the EOL flag?
+my $str = "Lorem ipsum dolor amet, consectetur adipisicing elit, sed do eiusmod tempor aliqua.\n"
+        . "Ut enim ad minim veniam, quis nostrud exercitation laboris nisi commodo consequat.\n"
+        . "Duis aute irure dolor in reprehenderit in cillum dolore eu fugiat nulla pariatur.\n"
+        . "Excepteur sint occaecat non proident, sunt in culpa qui mollit anim id est laborum.";
 ```
 
 * Use two spaces per indentation level. The main advantage being that it makes
