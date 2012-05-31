@@ -1,4 +1,4 @@
-﻿# Perl style guide
+# Perl style guide
 
 A few guidelines for a 'post-modern' Perl coding style.
 
@@ -42,7 +42,7 @@ my $str = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do "
         . "nulla pariatur. Excepteur sint occaecat cupidatat non proident, " 
         . "sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
-## This is actually okay. Notice the EOL flag?
+## This is actually okay. Notice the EOL flag? Scroll right ;)
 my $str = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n"
         . "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n"
         . "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n"
@@ -108,8 +108,8 @@ my $self = {name    => 'Max Payne',
             age     => 43,
             weapon  => 'Beretta 92f'
             motives => [qw(revenge)]
-            targets => ['Vladimir Lem', 'Vinny Cognitti',
-                        'Jack Lupino',  'Whatever']};
+            targets => ['Vladimir Lem', 'Vinnie Cognitti',
+                        'Jack Lupino',  'Frankie Niagara']};
 
 ## Bad.
 my $self = {
@@ -118,8 +118,8 @@ my $self = {
   weapon  => 'Beretta 92f'
   motives => [qw(revenge)]
   targets => [
-    'Vladimir Lem', 'Vinny Cognitti',
-    'Jack Lupino',  'Whatever'
+    'Vladimir Lem', 'Vinnie Cognitti',
+    'Jack Lupino',  'Frankie Niagara'
   ]
 };
 ```
@@ -138,14 +138,14 @@ my $fact = sub { my ($n, $ret) = ($_[0], 1); $ret *= $_ for 1 .. $n; $ret }
   hashes, array and hash references, string and command line delimiters.
 
 ```perl
-my ($self, $who, @params) = @_;        # Good.
 my ( $self, $who, @params ) = @_;      # Bad.
+my ($self, $who, @params) = @_;        # Good.
 
-my $self = {name => "Eric", age => 26};    # Good.
 my $self = { name => "Eric", age => 26 };  # Bad.
+my $self = {name => "Eric", age => 26};    # Good.
 
-my @files = qx|ls $str|;               # Good.
 my @files = qx| ls $str |;             # Bad.
+my @files = qx|ls $str|;               # Good.
 ```
 
 Please keep in mind that this does not apply to operators.
@@ -154,7 +154,7 @@ Please keep in mind that this does not apply to operators.
 my $fn = sub {$_[0] + 1};              # Bad.
 my $fn = sub { $_[0] + 1 };            # Good.
 
-my @items = map {do_something_to $_} @_;  # Bad.
+my @items = map {do_something_to $_} @_;    # Bad.
 my @items = map { do_something_to $_ } @_;  # Good.
 ```
 
@@ -194,7 +194,7 @@ my @months = qw(January   February March    April
                 May       June     July     August
                 September October  November December);
 
-my $var1          = ...;
+my $var_          = ...;
 my $var_2         = ...;
 my $var_long_name = ...;
 
@@ -233,10 +233,10 @@ my $variable = a_very_very_big_condition_name
                  ? is_this_very_long_subroutine
                  : is_that_one_that_is_even_larger;
 
-my $var = cond1                  ? 'arg1'
+my $var = cond_one               ? 'arg1'
         : cond_two               ? 'arg2'
         : cond_three_larger_name ? 'arg3'
-        :                          'otherwise'
+        :                          'argn'
         ;
 ```
 
@@ -244,7 +244,7 @@ my $var = cond1                  ? 'arg1'
   about introducing false deltas in your VCS though. Emacs has its own
   extension, so does Eclipse's EPIC. In VIM you can do something like this:
 
-```vimscript
+```vim
 " Map F4 to a perltidy system call.
 map <F4> !perltidy -q -gnu -i=2 -l=0 -pt=2 -bt=2 -sbt=2 -bbt=1 -nbl -vt=2 -vtc=2 -sct<CR>
 " The same, but calling a configuration file.
@@ -373,7 +373,7 @@ if ($test) {
 do_something if $test;
 
 ## One, large statement.
-print "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+print "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor aliqua."
   if $can_print_p;
 ```
 
