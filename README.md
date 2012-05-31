@@ -241,7 +241,7 @@ my $var = cond_one               ? 'arg1'
 ```
 
 * Introduce and enforce the use of perltidy in your workplace. Be careful
-  about introducing false deltas in your VCS though. Emacs has its own
+  about introducing false deltas in your CVS though. Emacs has its own
   extension, so does Eclipse's EPIC. In VIM you can do something like this:
 
 ```vim
