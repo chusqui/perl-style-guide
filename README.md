@@ -16,6 +16,8 @@ Damian Conway.
 The most important thing, after all, is that both you and your teammates are
 comfortable with a given guideline and stick to it.
 
+---
+
 ## Code layout
 
 * Try to limit your code to 72-78 column lines...
@@ -305,7 +307,7 @@ sub function_name {
 }
 ```
 
-### Coding style
+## Coding style
 
 * Always unpack the stack first.
 
@@ -404,7 +406,53 @@ party_all_night unless $sleepy         # Good.
 
 * Use "\t" for tabs.
 
+* Make numbers more readable by using underscores.
+
+```perl
+my $million = 1_000_000;
+```
+
+* Use heredocs or qq{str} for multi-line strings.
+
+```perl
+my $query = <<SQL
+  SELECT col1, col2
+    FROM table_name
+   WHERE year = 2012
+     AND col1 LIKE '%foo%'
+SQL
+
+## This is even better for selecting blocks in certain text editors.
+my $query = qq{
+  SELECT col1, col2
+    FROM table_name
+   WHERE year = 2012
+     AND col1 LIKE '%foo%'
+};
+```
+
+* Associate hash key and values by using fat comma.
+
+```perl
+## Correct, but bad style.
+my %hash = (key1, 'val1',
+            key2, 'val2',
+            key3, 'val3');
+
+## Good.
+my %hash = (key1 => 'val1',
+            key2 => 'val2',
+            key3 => 'val3');
+```
+
 ## Recommended modules
+
+* Use Readonly for constants and immutable values.
+
+```perl
+use Readonly;
+Readonly my $PI => 3.1415926;
+```
 
 ## Performance tips
 
