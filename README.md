@@ -288,9 +288,9 @@ sub evil_function {
 
 * Learn to use POD on all its glory.
 
-* Place POD after your code if you're developing a module. Preferably __DATA__
-  or __END__. Mixing code and POD is still acceptable when you just want to
-  comment a few subroutines.
+* Place POD after your code if you're developing a module. Preferably
+  __\_\_DATA\_\___   or __\_\_END\_\___. Mixing code and POD is still acceptable
+  when you just want to   comment a few subroutines.
 
 ```perl
 =head2 function_name : brief, optional description about types
@@ -335,9 +335,9 @@ sub my_method {
   by using a magic goto, it's usually not advisable as it is scary for
   unexperienced developers (and then they'll fly to Ruby, or worse).
 
-* Learn to use and master __List::Util__ and __List::MoreUtils__. They provide
-  most of what you'll ever need for list manipulation and they're built in C
-  for greater performance.
+* Learn to use and master __List::Util__ and __List::MoreUtils__ (or even
+  __List::AllUtils__ !). They provide   most of what you'll ever need for list
+  manipulation and they're built in C   for greater performance.
 
 * Name booleans and predicates using the following nomenclature:
 
@@ -499,8 +499,8 @@ use Readonly;
 Readonly my $PI => 3.1415926;
 ```
 
-* Profile your code with __Devel::NYTProf__.
-
 ## Performance tips
 
 ### Profiling
+
+* Profile your code with __Devel::NYTProf__.
