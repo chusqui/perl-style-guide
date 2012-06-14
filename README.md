@@ -335,7 +335,9 @@ sub my_method {
   by using a magic goto, it's usually not advisable as it is scary for
   unexperienced developers (and then they'll fly to Ruby, or worse).
 
-* Learn to use and master List::Util's reduce.
+* Learn to use and master __List::Util__ and __List::MoreUtils__. They provide
+  most of what you'll ever need for list manipulation and they're built in C
+  for greater performance.
 
 * Name booleans and predicates using the following nomenclature:
 
@@ -447,6 +449,8 @@ my %hash = (key1 => 'val1',
 * Favor the use of Moose, Mouse, Mo or similar instead of classic Perl OOP.
 
 * Try not to use BUILDARGS as it leads to difficult to maintain code.
+
+__FIXME__: I'm not so sure about this guideline.
 
 ```perl
 package Class;
