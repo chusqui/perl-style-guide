@@ -358,9 +358,6 @@ sub not_registered_p { ... }
 * Use strict and warnings (or better, Modern::Perl "$year") unless you want to
   summon the dark spirits and you really know what you're doing.
 
-* Favor the use of Moose, Mouse, Mo or similar instead of classic Perl OOP.
-  Join the revolution moose.perl.org
-
 * Use the alternate infix if / unless syntax when working with single statements.
 
 ```perl
@@ -445,6 +442,50 @@ my %hash = (key1 => 'val1',
             key3 => 'val3');
 ```
 
+### Object-oriented Programming
+
+* Favor the use of Moose, Mouse, Mo or similar instead of classic Perl OOP.
+
+* Try not to use BUILDARGS as it leads to difficult to maintain code.
+
+```perl
+package Class;
+use Moose;
+has 'a', is => 'ro', isa => 'Any';
+has 'b', is => 'ro', isa => 'Any';
+
+around BUILDARGS => sub {
+  my ($orig, $class, @p) = @_;
+  scalar @params == 2
+    ? $class->$orig(a => $p[0], b => $p[1])
+    : $class->$orig(@p);
+}
+
+...
+
+1;
+
+## Aim for an old school object constructor instead.
+sub make_classname {
+  Class->new(a => $_[0], b => $_[1]);
+}
+```
+
+* Clean up your classes with __namespace::autoclean__.
+
+* Make your classes immutable for better performance.
+
+```perl
+package ClassName;
+use Moose;
+
+## Rest of code here...
+
+__PACKAGE__->meta->make_immutable;
+
+1;
+```
+
 ## Recommended modules
 
 * Use Readonly for constants and immutable values.
@@ -453,6 +494,8 @@ my %hash = (key1 => 'val1',
 use Readonly;
 Readonly my $PI => 3.1415926;
 ```
+
+* Profile your code with __Devel::NYTProf__.
 
 ## Performance tips
 
